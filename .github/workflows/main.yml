@@ -555,7 +555,7 @@ jobs:
 
       - name: "Artifacts"
         uses: actions/upload-artifact@v3
-        with:
-          name: "${{ matrix.runner }}-${{ matrix.compiler }}-qt${{ matrix.qt }}"
-          path: "${{ github.workspace }}/build/package"
+       with:
+         name: "${{ matrix.name }}-${{ matrix.compiler }}-Qt${{ matrix.qt }}-${{ steps.get-latest-tag.outputs.tag }}"
+         path: "${{ github.workspace }}/build/package"
           retention-days: 3
